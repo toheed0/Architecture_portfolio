@@ -12,7 +12,7 @@ export default function Footer() {
     >
       <p className="text-gray-400 tracking-wide">
         &copy; {new Date().getFullYear()}{" "}
-        <span className="text-[#D4AF37] font-semibold">ArchDesign</span>. All rights reserved.
+        <span className="text-[#D4AF37] font-semibold">HHH-Design-Studio</span>. All rights reserved.
       </p>
     </motion.footer>
   );

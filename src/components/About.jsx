@@ -7,8 +7,9 @@ import {
   FaInstagram,
   FaFacebook,
   FaLinkedin,
+  FaTiktok ,
 } from "react-icons/fa";
-import clientImg from "../assets/azeem.jpg";
+import clientImg from "../assets/azeemCeo1.jpg";
 
 export default function About() {
   const [counters, setCounters] = useState({ years: 0, projects: 0, clients: 0 });
@@ -114,11 +115,13 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#D4AF37] to-[#b8902d] bg-clip-text text-transparent mb-4 tracking-wide">
-              Muhammad Azeem
-            </h2>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#D4AF37] to-[#b8902d] bg-clip-text text-transparent mb-1 tracking-wide">
+  MUHAMMAD AZEEM
+</h2>
+<p className="text-[#D4AF37] text-lg font-semibold mb-4">CEO</p>
+
             <p className="text-gray-400 mb-8 leading-relaxed text-lg">
-              With over 18 years of experience in architecture & interior design, I've led
+              With over 18 years of experience in architecture, project management & interior design, I've led
               projects that merge creativity with functionality. From luxury villas to
               corporate spaces — my focus is timeless elegance and innovation.
             </p>
@@ -168,7 +171,7 @@ export default function About() {
                 <FaInstagram />
               </a>
               <a
-                href="https://facebook.com/yourprofile"
+                href="https://www.facebook.com/share/1CJe1Y5xEv/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#D4AF37] text-3xl hover:scale-110 transition"
@@ -176,12 +179,20 @@ export default function About() {
                 <FaFacebook />
               </a>
               <a
-                href="https://www.linkedin.com/in/HHH DESIGN STUDIO"
+                href="https://www.linkedin.com/in/hhh-design-studio-083619379/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#D4AF37] text-3xl hover:scale-110 transition"
               >
                 <FaLinkedin />
+              </a>
+              <a
+                href="https://www.tiktok.com/@hhh.design.studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#D4AF37] text-3xl hover:scale-110 transition"
+              >
+                <FaTiktok />
               </a>
             </div>
           </motion.div>

@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 const services = [
   { title: "Architecture Design", desc: "Innovative building designs tailored to your needs." },
   { title: "Interior Design", desc: "Elegant and functional interiors for homes and offices." },
-  { title: "Landscape Design", desc: "Transforming outdoor spaces into green havens." },
+  { title: "Project Management", desc: "Planning and managing projects to deliver successful results." }
+
+
 ];
 
 export default function Services() {
