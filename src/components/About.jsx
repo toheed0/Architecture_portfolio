@@ -121,7 +121,7 @@ export default function About() {
 <p className="text-[#D4AF37] text-lg font-semibold mb-4">CEO</p>
 
             <p className="text-gray-400 mb-8 leading-relaxed text-lg">
-              With over 18 years of experience in architecture, project management & interior design, I've led
+              With over 18 years of experience in architecture,interior design & project management. I've led
               projects that merge creativity with functionality. From luxury villas to
               corporate spaces — my focus is timeless elegance and innovation.
             </p>

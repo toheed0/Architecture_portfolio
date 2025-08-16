@@ -10,25 +10,17 @@ export default function Hero() {
       className="relative h-screen w-full bg-cover bg-center md:bg-top md:bg-fixed"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-
       {/* Logo & tagline */}
       <div className="absolute top-8 left-8 z-20 flex flex-col items-center">
-        <div className="relative">
-          {/* Golden glow background */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#D4AF37] to-[#b8902d] opacity-80 blur-xl"></div>
-
-          {/* Logo Image */}
-          <img
-            src={logo}
-            alt="Logo"
-            className="relative h-16 md:h-20 object-contain drop-shadow-[0_0_25px_rgba(212,175,55,0.7)]"
-          />
-        </div>
+        {/* Simple Logo Image */}
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-16 md:h-20 object-contain"
+        />
 
         {/* Tagline */}
-        <p className="mt-2 text-xs md:text-sm tracking-[0.25em] font-light text-gray-200 uppercase drop-shadow-md text-center">
+        <p className="mt-2 text-xs md:text-sm tracking-[0.25em] font-light text-white uppercase text-center">
           Design Studio
         </p>
       </div>
