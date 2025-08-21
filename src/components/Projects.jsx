@@ -139,7 +139,7 @@ export default function Projects() {
   };
 
   return (
-    <section className="py-20 bg-[#0f0f0f] text-white">
+    <section id="projects" className="py-20 bg-[#0f0f0f] text-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
