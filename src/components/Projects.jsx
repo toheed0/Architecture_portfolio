@@ -151,8 +151,8 @@ const allProjects = [
   { id:72,  title: "Luxury Lobby",        img: lo15,        category: "Lobby" },
   { id:73,  title: "Luxury Lobby",        img: lo16,        category: "Lobby" },
   { id:74,  title: "Landscap",              img: lc1,    category: "Landscape" },
-  { id:14,  title: "Luxury Pool",              img: lc2,    category: "Landscape" },
-  { id:14,  title: "Premium pool",              img: lc3,    category: "Landscape" },
+  { id:75,  title: "Luxury Pool",              img: lc2,    category: "Landscape" },
+  { id:76,  title: "Premium pool",              img: lc3,    category: "Landscape" },
 ];
 
 
