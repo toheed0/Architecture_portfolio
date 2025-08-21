@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import member1 from "../assets/team2.jpg";
-import member2 from "../assets/draft2.jpg";
+import member2 from "../assets/ahmad.jpg";
 import member3 from "../assets/interiorDesign.jpg";
 import member4 from "../assets/site.jpg";
 import member5 from "../assets/architect.jpg";  

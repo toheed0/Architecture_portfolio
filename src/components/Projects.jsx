@@ -50,9 +50,16 @@ import ar20 from "../assets/architecture/ar20.jpg";
 import ar21 from "../assets/architecture/ar21.jpg";
 import ar22 from "../assets/architecture/ar22.jpg";
 import ar23 from "../assets/architecture/ar23.jpg";
+import int21 from "../assets/interior/interior21.jpg"
+import int22 from "../assets/interior/interior22.jpg";
+import int23 from "../assets/interior/interior23.jpg";
+import int24 from "../assets/interior/interior24.jpg";
+import arr1 from "../assets/arr1.jpg";
+import lo from "../assets/lo.jpg";
+
 
 const allProjects = [
-  { id: 1,  title: "Luxury Villa",        img: architecture3, category: "Architecture" },
+  { id: 1,  title: "Luxury Villa",        img: architecture3, category: "Elevation" },
   { id: 2,  title: "Luxury Interior",     img: project2,      category: "Interior" },
   { id: 3,  title: "Landscape Garden",    img: landscape,     category: "Landscape" },
   { id: 4,  title: "Luxury Bedroom",      img: bedroom,       category: "Bedrooms" },
@@ -61,17 +68,17 @@ const allProjects = [
   { id: 7,  title: "Premium Kitchen",     img: interior,      category: "Interior" },
   { id: 8,  title: "Kitchen",             img: interior1,     category: "Interior" },
   { id: 9,  title: "City Lobby",          img: lobby1,        category: "Lobby" },
-  { id:10,  title: "Villa",               img: architecture2, category: "Architecture" },
-  { id:11,  title: "Modern Villa",        img: architecture4, category: "Architecture" },
+  { id:10,  title: "Villa",               img: architecture2, category: "Elevation" },
+  { id:11,  title: "Modern Villa",        img: architecture4, category: "Elevation" },
   { id:12,  title: "Luxury Interior",     img: interior2,     category: "Interior" },
   { id:13,  title: "Black Theme",         img: bedroom2,      category: "Bedrooms" },
   { id:14,  title: "Garden",              img: landscape1,    category: "Landscape" },
-  { id:15,  title: "Villa",               img: architecture1, category: "Architecture" },
-  { id:16,  title: "Villa",               img: architecture5, category: "Architecture" },
-  { id:17,  title: "Villa",               img: architecture6, category: "Architecture" },
+  { id:15,  title: "Villa",               img: architecture1, category: "Elevation" },
+  { id:16,  title: "Villa",               img: architecture5, category: "Elevation" },
+  { id:17,  title: "Villa",               img: architecture6, category: "Elevation" },
   { id:18,  title: "Lobby Premium",       img: lobby2,        category: "Lobby" },
   { id:19,  title: "Luxury Lobby",        img: lobby3,        category: "Lobby" },
-  { id:20,  title: "Modern Villa",        img: architecture7, category: "Architecture" },
+  { id:20,  title: "Modern Villa",        img: architecture7, category: "Elevation" },
   { id:21,  title: "Vill Garden",              img: landscape2,    category: "Landscape" },
   { id:22,  title: "Luxury Lobby",        img: lobby5,        category: "Lobby" },
   { id:23,  title: "Luxury Lobby",        img: lobby6,        category: "Lobby" },
@@ -79,28 +86,34 @@ const allProjects = [
   { id: 25,  title: "Cozy Bedroom",        img: bedroom5,      category: "Bedrooms" },
   { id: 26,  title: " Bedroom",        img:bedroom6 ,      category: "Bedrooms" },
   { id: 27,  title: "Luxury Bedroom",        img: bedroom7,      category: "Bedrooms" },
-  { id:28,  title: "Modern Villa",        img: ar1, category: "Architecture" },
-  { id:29,  title: "Modern Villa",        img: ar2, category: "Architecture" },
-  { id:30,  title: "Modern Villa",        img: ar3, category: "Architecture" },
-  { id:31,  title: "Modern Villa",        img: ar4, category: "Architecture" },
-  { id:32,  title: "Modern Villa",        img: ar5, category: "Architecture" },
-  { id:33,  title: "Modern Villa",        img: ar6, category: "Architecture" },
-  { id:34,  title: "Modern Villa",        img: ar7, category: "Architecture" },
-  { id:36,  title: "Modern Villa",        img: ar8, category: "Architecture" },
-  { id:37,  title: "Modern Villa",        img: ar9, category: "Architecture" },
-  { id:38,  title: "Modern Villa",        img: ar10, category: "Architecture" },
-  { id:39,  title: "Modern Villa",        img: ar11, category: "Architecture" },
-  { id:40,  title: "Modern Villa",        img: ar12, category: "Architecture" },
-  { id:41,  title: "Modern Villa",        img: ar13, category: "Architecture" },
-  { id:42,  title: "Modern Villa",        img: ar14, category: "Architecture" },
-  { id:44,  title: "Modern Villa",        img: ar16, category: "Architecture" },
-  { id:45,  title: "Modern Villa",        img: ar17, category: "Architecture" },
-  { id:46,  title: "Modern Villa",        img: ar18, category: "Architecture" },
-  { id:47,  title: "Modern Villa",        img: ar19, category: "Architecture" },
-  { id:48,  title: "Modern Villa",        img: ar20, category: "Architecture" },
-  { id:49,  title: "Modern Villa",        img: ar21, category: "Architecture" },
-  { id:50,  title: "Modern Villa",        img: ar22, category: "Architecture" },
-  { id:51,  title: "Modern Villa",        img: ar23, category: "Architecture" },
+  { id:28,  title: "Modern Villa",        img: ar1, category: "Elevation" },
+  { id:29,  title: "Modern Villa",        img: ar2, category: "Elevation" },
+  { id:30,  title: "Modern Villa",        img: ar3, category: "Elevation" },
+  { id:31,  title: "Modern Villa",        img: ar4, category: "Elevation" },
+  { id:32,  title: "Modern Villa",        img: ar5, category: "Elevation" },
+  { id:33,  title: "Modern Villa",        img: ar6, category: "Elevation" },
+  { id:34,  title: "Modern Villa",        img: ar7, category: "Elevation" },
+  { id:36,  title: "Modern Villa",        img: ar8, category: "Elevation" },
+  { id:37,  title: "Modern Villa",        img: ar9, category: "Elevation" },
+  { id:38,  title: "Modern Villa",        img: ar10, category: "Elevation" },
+  { id:39,  title: "Modern Villa",        img: ar11, category: "Elevation" },
+  { id:40,  title: "Modern Villa",        img: ar12, category: "Elevation" },
+  { id:41,  title: "Modern Villa",        img: ar13, category: "Elevation" },
+  { id:42,  title: "Modern Villa",        img: ar14, category: "Elevation" },
+  { id:44,  title: "Modern Villa",        img: ar16, category: "Elevation" },
+  { id:45,  title: "Modern Villa",        img: ar17, category: "Elevation" },
+  { id:46,  title: "Modern Villa",        img: ar18, category: "Elevation" },
+  { id:47,  title: "Modern Villa",        img: ar19, category: "Elevation" },
+  { id:48,  title: "Modern Villa",        img: ar20, category: "Elevation" },
+  { id:49,  title: "Modern Villa",        img: ar21, category: "Elevation" },
+  { id:50,  title: "Modern Villa",        img: ar22, category: "Elevation" },
+  { id:51,  title: "Modern Villa",        img: ar23, category: "Elevation" },
+  { id:52,  title: "Modern Interior",        img: int21, category: "Interior" },
+  { id:53,  title: "Interior",               img: int22, category: "Interior" },
+  { id:54,  title: "Luxury Interior",        img: int23, category: "Interior" },
+  { id:55,  title: "Premium Interior",       img: int24, category: "Interior" },
+  { id:56,  title: "Modern Villa",        img: arr1, category: "Elevation" },
+  { id: 57,  title: "Lobby",               img: lo,         category: "Lobby" },
 ];
 
 
@@ -108,7 +121,7 @@ export default function Projects() {
   const [category, setCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(6);
 
-  const categories = ["All", "Lobby", "Bedrooms", "Architecture", "Interior", "Landscape"];
+  const categories = ["All", "Lobby", "Bedrooms", "Elevation", "Interior", "Landscape"];
 
   const filteredProjects = category === "All" ? allProjects : allProjects.filter((p) => p.category === category);
 
