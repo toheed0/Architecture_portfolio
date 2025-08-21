@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+
 import architecture1 from "../assets/img39.webp";
 import architecture2 from "../assets/architecture1.jpg";
 import architecture3 from "../assets/architecture.jpg";
@@ -114,10 +116,11 @@ const allProjects = [
   { id: 57,  title: "Lobby",               img: lo,         category: "Lobby" },
 ];
 
+
 export default function Projects() {
   const [category, setCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(6);
-  const [selectedIndex, setSelectedIndex] = useState(null); // ✅ index rakhenge
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const categories = ["All", "Lobby", "Bedrooms", "Elevation", "Interior", "Landscape"];
 
@@ -126,17 +129,6 @@ export default function Projects() {
 
   const showMore = () => setVisibleCount((prev) => Math.min(prev + 3, filteredProjects.length));
   const showLess = () => setVisibleCount(6);
-
-  // ✅ Next/Prev functions
-  const handleNext = () => {
-    setSelectedIndex((prev) => (prev + 1) % filteredProjects.length);
-  };
-
-  const handlePrev = () => {
-    setSelectedIndex((prev) =>
-      prev === 0 ? filteredProjects.length - 1 : prev - 1
-    );
-  };
 
   return (
     <section id="projects" className="py-20 bg-[#0f0f0f] text-white">
@@ -170,7 +162,7 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="relative cursor-pointer group"
-              onClick={() => setSelectedIndex(index)} // ✅ index pass kar diya
+              onClick={() => setSelectedIndex(index)} // ✅ yahan index correct
             >
               <img
                 src={p.img}
@@ -208,7 +200,7 @@ export default function Projects() {
         )}
       </div>
 
-      {/* ✅ Modal with Prev/Next */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
@@ -217,47 +209,57 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
-            onClick={() => setSelectedIndex(null)}
           >
             <motion.div
-              initial={{ scale: 0.85 }}
+              initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.85 }}
-              transition={{ duration: 0.3 }}
-              className="relative bg-[#1a1a1a] p-4 rounded-2xl shadow-lg max-w-4xl w-full"
-              onClick={(e) => e.stopPropagation()}
+              exit={{ scale: 0.9 }}
+              className="relative bg-white rounded-xl max-w-3xl w-full p-6 shadow-2xl"
             >
-              {/* Current Image */}
-              <img
-                src={filteredProjects[selectedIndex].img}
-                alt={filteredProjects[selectedIndex].title}
-                className="w-full h-[500px] object-cover rounded-lg mb-4"
-              />
-              <h4 className="text-2xl font-semibold text-[#D4AF37] text-center">
-                {filteredProjects[selectedIndex].title}
-              </h4>
-
               {/* Close Button */}
               <button
                 onClick={() => setSelectedIndex(null)}
-                className="absolute top-3 right-3 text-white text-xl hover:text-[#D4AF37]"
+                className="absolute z-40 top-3 right-3 text-gray-600 hover:text-gray-900"
               >
-                ✕
+                <X size={28} />
               </button>
 
-              {/* Prev / Next Arrows */}
-              <button
-                onClick={handlePrev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-3xl text-white hover:text-[#D4AF37]"
-              >
-                ⟨
-              </button>
-              <button
-                onClick={handleNext}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-3xl text-white hover:text-[#D4AF37]"
-              >
-                ⟩
-              </button>
+              {/* Image */}
+              <img
+                src={filteredProjects[selectedIndex].img}
+                alt={filteredProjects[selectedIndex].title}
+                className="max-h-[80vh] w-auto mx-auto object-contain rounded-lg mb-4"
+              />
+
+              {/* Title */}
+              <h2 className="text-2xl font-bold mb-2 text-center text-black">
+                {filteredProjects[selectedIndex].title}
+              </h2>
+
+              {/* Arrows */}
+              <div className="absolute inset-y-0 left-3 flex items-center">
+                <button
+                  onClick={() =>
+                    setSelectedIndex(
+                      (selectedIndex - 1 + filteredProjects.length) % filteredProjects.length
+                    )
+                  }
+                  className="p-3 bg-black/80 rounded-full shadow"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+              </div>
+
+              <div className="absolute inset-y-0 right-3 flex items-center">
+                <button
+                  onClick={() =>
+                    setSelectedIndex((selectedIndex + 1) % filteredProjects.length)
+                  }
+                  className="p-3 bg-black/80 rounded-full shadow "
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}
