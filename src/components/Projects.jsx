@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; // ✅ AnimatePresence import
 import architecture1 from "../assets/img39.webp";
 import architecture2 from "../assets/architecture1.jpg";
 import architecture3 from "../assets/architecture.jpg";
@@ -56,74 +56,73 @@ import int23 from "../assets/interior/interior23.jpg";
 import int24 from "../assets/interior/interior24.jpg";
 import arr1 from "../assets/arr1.jpg";
 import lo from "../assets/lo.jpg";
-
-
-const allProjects = [
-  { id: 1,  title: "Luxury Villa",        img: architecture3, category: "Elevation" },
-  { id: 2,  title: "Luxury Interior",     img: project2,      category: "Interior" },
-  { id: 3,  title: "Landscape Garden",    img: landscape,     category: "Landscape" },
-  { id: 4,  title: "Luxury Bedroom",      img: bedroom,       category: "Bedrooms" },
-  { id: 5,  title: "Cozy Bedroom",        img: bedroom1,      category: "Bedrooms" },
-  { id: 6,  title: "Lobby",               img: lobby,         category: "Lobby" },
-  { id: 7,  title: "Premium Kitchen",     img: interior,      category: "Interior" },
-  { id: 8,  title: "Kitchen",             img: interior1,     category: "Interior" },
-  { id: 9,  title: "City Lobby",          img: lobby1,        category: "Lobby" },
-  { id:10,  title: "Villa",               img: architecture2, category: "Elevation" },
-  { id:11,  title: "Modern Villa",        img: architecture4, category: "Elevation" },
-  { id:12,  title: "Luxury Interior",     img: interior2,     category: "Interior" },
-  { id:13,  title: "Black Theme",         img: bedroom2,      category: "Bedrooms" },
-  { id:14,  title: "Garden",              img: landscape1,    category: "Landscape" },
-  { id:15,  title: "Villa",               img: architecture1, category: "Elevation" },
-  { id:16,  title: "Villa",               img: architecture5, category: "Elevation" },
-  { id:17,  title: "Villa",               img: architecture6, category: "Elevation" },
-  { id:18,  title: "Lobby Premium",       img: lobby2,        category: "Lobby" },
-  { id:19,  title: "Luxury Lobby",        img: lobby3,        category: "Lobby" },
-  { id:20,  title: "Modern Villa",        img: architecture7, category: "Elevation" },
-  { id:21,  title: "Vill Garden",              img: landscape2,    category: "Landscape" },
-  { id:22,  title: "Luxury Lobby",        img: lobby5,        category: "Lobby" },
-  { id:23,  title: "Luxury Lobby",        img: lobby6,        category: "Lobby" },
-  { id:24,  title: "Luxury Lobby",        img: lobby7,        category: "Lobby" },
-  { id: 25,  title: "Cozy Bedroom",        img: bedroom5,      category: "Bedrooms" },
-  { id: 26,  title: " Bedroom",        img:bedroom6 ,      category: "Bedrooms" },
-  { id: 27,  title: "Luxury Bedroom",        img: bedroom7,      category: "Bedrooms" },
-  { id:28,  title: "Modern Villa",        img: ar1, category: "Elevation" },
-  { id:29,  title: "Modern Villa",        img: ar2, category: "Elevation" },
-  { id:30,  title: "Modern Villa",        img: ar3, category: "Elevation" },
-  { id:31,  title: "Modern Villa",        img: ar4, category: "Elevation" },
-  { id:32,  title: "Modern Villa",        img: ar5, category: "Elevation" },
-  { id:33,  title: "Modern Villa",        img: ar6, category: "Elevation" },
-  { id:34,  title: "Modern Villa",        img: ar7, category: "Elevation" },
-  { id:36,  title: "Modern Villa",        img: ar8, category: "Elevation" },
-  { id:37,  title: "Modern Villa",        img: ar9, category: "Elevation" },
-  { id:38,  title: "Modern Villa",        img: ar10, category: "Elevation" },
-  { id:39,  title: "Modern Villa",        img: ar11, category: "Elevation" },
-  { id:40,  title: "Modern Villa",        img: ar12, category: "Elevation" },
-  { id:41,  title: "Modern Villa",        img: ar13, category: "Elevation" },
-  { id:42,  title: "Modern Villa",        img: ar14, category: "Elevation" },
-  { id:44,  title: "Modern Villa",        img: ar16, category: "Elevation" },
-  { id:45,  title: "Modern Villa",        img: ar17, category: "Elevation" },
-  { id:46,  title: "Modern Villa",        img: ar18, category: "Elevation" },
-  { id:47,  title: "Modern Villa",        img: ar19, category: "Elevation" },
-  { id:48,  title: "Modern Villa",        img: ar20, category: "Elevation" },
-  { id:49,  title: "Modern Villa",        img: ar21, category: "Elevation" },
-  { id:50,  title: "Modern Villa",        img: ar22, category: "Elevation" },
-  { id:51,  title: "Modern Villa",        img: ar23, category: "Elevation" },
-  { id:52,  title: "Modern Interior",        img: int21, category: "Interior" },
-  { id:53,  title: "Interior",               img: int22, category: "Interior" },
-  { id:54,  title: "Luxury Interior",        img: int23, category: "Interior" },
-  { id:55,  title: "Premium Interior",       img: int24, category: "Interior" },
-  { id:56,  title: "Modern Villa",        img: arr1, category: "Elevation" },
-  { id: 57,  title: "Lobby",               img: lo,         category: "Lobby" },
-];
-
+  const allProjects = [
+    { id: 1,  title: "Luxury Villa",        img: architecture3, category: "Elevation" },
+    { id: 2,  title: "Luxury Interior",     img: project2,      category: "Interior" },
+    { id: 3,  title: "Landscape Garden",    img: landscape,     category: "Landscape" },
+    { id: 4,  title: "Luxury Bedroom",      img: bedroom,       category: "Bedrooms" },
+    { id: 5,  title: "Cozy Bedroom",        img: bedroom1,      category: "Bedrooms" },
+    { id: 6,  title: "Lobby",               img: lobby,         category: "Lobby" },
+    { id: 7,  title: "Premium Kitchen",     img: interior,      category: "Interior" },
+    { id: 8,  title: "Kitchen",             img: interior1,     category: "Interior" },
+    { id: 9,  title: "City Lobby",          img: lobby1,        category: "Lobby" },
+    { id:10,  title: "Villa",               img: architecture2, category: "Elevation" },
+    { id:11,  title: "Modern Villa",        img: architecture4, category: "Elevation" },
+    { id:12,  title: "Luxury Interior",     img: interior2,     category: "Interior" },
+    { id:13,  title: "Black Theme",         img: bedroom2,      category: "Bedrooms" },
+    { id:14,  title: "Garden",              img: landscape1,    category: "Landscape" },
+    { id:15,  title: "Villa",               img: architecture1, category: "Elevation" },
+    { id:16,  title: "Villa",               img: architecture5, category: "Elevation" },
+    { id:17,  title: "Villa",               img: architecture6, category: "Elevation" },
+    { id:18,  title: "Lobby Premium",       img: lobby2,        category: "Lobby" },
+    { id:19,  title: "Luxury Lobby",        img: lobby3,        category: "Lobby" },
+    { id:20,  title: "Modern Villa",        img: architecture7, category: "Elevation" },
+    { id:21,  title: "Vill Garden",              img: landscape2,    category: "Landscape" },
+    { id:22,  title: "Luxury Lobby",        img: lobby5,        category: "Lobby" },
+    { id:23,  title: "Luxury Lobby",        img: lobby6,        category: "Lobby" },
+    { id:24,  title: "Luxury Lobby",        img: lobby7,        category: "Lobby" },
+    { id: 25,  title: "Cozy Bedroom",        img: bedroom5,      category: "Bedrooms" },
+    { id: 26,  title: " Bedroom",        img:bedroom6 ,      category: "Bedrooms" },
+    { id: 27,  title: "Luxury Bedroom",        img: bedroom7,      category: "Bedrooms" },
+    { id:28,  title: "Modern Villa",        img: ar1, category: "Elevation" },
+    { id:29,  title: "Modern Villa",        img: ar2, category: "Elevation" },
+    { id:30,  title: "Modern Villa",        img: ar3, category: "Elevation" },
+    { id:31,  title: "Modern Villa",        img: ar4, category: "Elevation" },
+    { id:32,  title: "Modern Villa",        img: ar5, category: "Elevation" },
+    { id:33,  title: "Modern Villa",        img: ar6, category: "Elevation" },
+    { id:34,  title: "Modern Villa",        img: ar7, category: "Elevation" },
+    { id:36,  title: "Modern Villa",        img: ar8, category: "Elevation" },
+    { id:37,  title: "Modern Villa",        img: ar9, category: "Elevation" },
+    { id:38,  title: "Modern Villa",        img: ar10, category: "Elevation" },
+    { id:39,  title: "Modern Villa",        img: ar11, category: "Elevation" },
+    { id:40,  title: "Modern Villa",        img: ar12, category: "Elevation" },
+    { id:41,  title: "Modern Villa",        img: ar13, category: "Elevation" },
+    { id:42,  title: "Modern Villa",        img: ar14, category: "Elevation" },
+    { id:44,  title: "Modern Villa",        img: ar16, category: "Elevation" },
+    { id:45,  title: "Modern Villa",        img: ar17, category: "Elevation" },
+    { id:46,  title: "Modern Villa",        img: ar18, category: "Elevation" },
+    { id:47,  title: "Modern Villa",        img: ar19, category: "Elevation" },
+    { id:48,  title: "Modern Villa",        img: ar20, category: "Elevation" },
+    { id:49,  title: "Modern Villa",        img: ar21, category: "Elevation" },
+    { id:50,  title: "Modern Villa",        img: ar22, category: "Elevation" },
+    { id:51,  title: "Modern Villa",        img: ar23, category: "Elevation" },
+    { id:52,  title: "Modern Interior",        img: int21, category: "Interior" },
+    { id:53,  title: "Interior",               img: int22, category: "Interior" },
+    { id:54,  title: "Luxury Interior",        img: int23, category: "Interior" },
+    { id:55,  title: "Premium Interior",       img: int24, category: "Interior" },
+    { id:56,  title: "Modern Villa",        img: arr1, category: "Elevation" },
+    { id: 57,  title: "Lobby",               img: lo,         category: "Lobby" },
+  ];
 
 export default function Projects() {
   const [category, setCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(6);
+  const [selected, setSelected] = useState(null); // ✅ modal ke liye state
 
   const categories = ["All", "Lobby", "Bedrooms", "Elevation", "Interior", "Landscape"];
 
-  const filteredProjects = category === "All" ? allProjects : allProjects.filter((p) => p.category === category);
+  const filteredProjects =
+    category === "All" ? allProjects : allProjects.filter((p) => p.category === category);
 
   const showMore = () => setVisibleCount((prev) => Math.min(prev + 3, filteredProjects.length));
   const showLess = () => setVisibleCount(6);
@@ -135,7 +134,6 @@ export default function Projects() {
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="text-4xl font-bold mb-4 text-center text-[#D4AF37]"
         >
@@ -144,7 +142,6 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-24 h-1 bg-[#D4AF37] mx-auto mb-10 rounded"
         />
@@ -176,18 +173,18 @@ export default function Projects() {
               key={p.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="group relative rounded-3xl overflow-hidden
                          bg-[#1a1a1a]/40 backdrop-blur-lg p-[2px] cursor-pointer
                          border border-gray-700 hover:border-[#D4AF37]
                          hover:shadow-[0_0_25px_#D4AF37]/40 transition"
+              onClick={() => setSelected(p)} // ✅ image click pe modal open
             >
               <div className="rounded-3xl overflow-hidden">
                 <img
                   src={p.img}
                   alt={p.title}
-                  loading="lazy"  // ✅ Lazy loading added
+                  loading="lazy"
                   className="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-500">
@@ -212,7 +209,6 @@ export default function Projects() {
               onClick={showMore}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
               transition={{ duration: 0.5 }}
               className="px-7 py-3 bg-[#D4AF37] text-[#0f0f0f] rounded-lg hover:bg-[#b8902d] transition"
             >
@@ -223,7 +219,6 @@ export default function Projects() {
               onClick={showLess}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
               transition={{ duration: 0.5 }}
               className="px-7 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition"
             >
@@ -232,6 +227,44 @@ export default function Projects() {
           ) : null}
         </div>
       </div>
+
+      {/* ✅ Modal */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            onClick={() => setSelected(null)} // ✅ click outside to close
+          >
+            <motion.div
+              initial={{ scale: 0.85 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.85 }}
+              transition={{ duration: 0.3 }}
+              className="relative bg-[#1a1a1a] p-4 rounded-2xl shadow-lg max-w-3xl w-full"
+              onClick={(e) => e.stopPropagation()} // ✅ stop close on inside click
+            >
+              <img
+                src={selected.img}
+                alt={selected.title}
+                className="w-full h-[500px] object-cover rounded-lg mb-4"
+              />
+              <h4 className="text-2xl font-semibold text-[#D4AF37] text-center">
+                {selected.title}
+              </h4>
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-3 right-3 text-white text-xl hover:text-[#D4AF37]"
+              >
+                ✕
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
