@@ -266,6 +266,7 @@ export default function Projects() {
               <img
                 src={p.img}
                 alt={p.title}
+                loading="lazy" 
                 className="w-full h-72 object-cover rounded-lg shadow-lg group-hover:opacity-80 transition"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition">
@@ -327,6 +328,7 @@ export default function Projects() {
               <img
                 src={filteredProjects[selectedIndex].img}
                 alt={filteredProjects[selectedIndex].title}
+                loading="lazy" 
                 className="max-h-[80vh] w-auto mx-auto object-contain rounded-lg mb-4"
               />
 
