@@ -69,6 +69,12 @@ import int21 from "../assets/interior/interior21.jpg"
 import int22 from "../assets/interior/interior22.jpg";
 import int23 from "../assets/interior/interior23.jpg";
 import int24 from "../assets/interior/interior24.jpg";
+import int25 from "../assets/interior/interior19.jpg";
+import int26 from "../assets/interior/interior12.jpg";
+import int27 from "../assets/interior/interior16.jpg";
+import int28 from "../assets/interior/interior18.jpg";
+import int29 from "../assets/interior/interior20.jpg";
+import int30 from "../assets/interior/interior11.jpg";
 import arr1 from "../assets/arr1.jpg";
 import int4 from "../assets/interior/int4.jpg";
 import lo from "../assets/lo.jpg";
@@ -78,6 +84,30 @@ import lo13 from "../assets/lobby/lo13.jpg";
 import lo14 from "../assets/lobby/lo14.jpg";
 import lo15 from "../assets/lobby/lo15.jpg";
 import lo16 from "../assets/lobby/lo16.jpg";
+import k1 from "../assets/kitchen/k1.jpg";
+import k2 from "../assets/kitchen/k2.jpg";
+import k3 from "../assets/kitchen/k3.jpg";
+import k4 from "../assets/kitchen/k4.jpg";
+import k5 from "../assets/kitchen/k5.jpg";
+import k6 from "../assets/kitchen/k6.jpg";
+import k7 from "../assets/kitchen/k7.jpg";
+import k9 from "../assets/kitchen/k9.jpg";
+import k10 from "../assets/kitchen/k10.jpg";
+import k11 from "../assets/kitchen/k11.jpg";
+import k12 from "../assets/kitchen/k12.jpg";
+import b1 from "../assets/bedroom/b1.jpg";
+import b2 from "../assets/bedroom/b2.jpg";
+import b3 from "../assets/bedroom/b3.jpg";
+import b4 from "../assets/bedroom/b4.jpg";
+import b5 from "../assets/bedroom/b5.jpg";
+import b6 from "../assets/bedroom/b6.jpg";
+import b7 from "../assets/bedroom/b7.jpg";
+import b8 from "../assets/bedroom/b8.jpg";
+import b9 from "../assets/bedroom/b9.jpg";
+import b10 from "../assets/bedroom/b10.jpg";
+import b11 from "../assets/bedroom/b11.jpg";
+
+
 const allProjects = [
   { id: 1,  title: "Luxury Villa",        img: architecture3, category: "Elevation" },
   { id: 2,  title: "Luxury Interior",     img: project2,      category: "Interior" },
@@ -85,8 +115,8 @@ const allProjects = [
   { id: 4,  title: "Luxury Bedroom",      img: bedroom,       category: "Bedrooms" },
   { id: 5,  title: "Cozy Bedroom",        img: bedroom1,      category: "Bedrooms" },
   { id: 6,  title: "Interior",               img: lobby,         category: "Interior" },
-  { id: 7,  title: "Premium Kitchen",     img: interior,      category: "Interior" },
-  { id: 8,  title: "Kitchen",             img: interior1,     category: "Interior" },
+  { id: 7,  title: "Premium Kitchen",     img: interior,      category: "Kitchen" },
+  { id: 8,  title: "Kitchen",             img: interior1,     category: "Kitchen" },
   { id: 9,  title: "City Lobby",          img: lobby1,        category: "Lobby" },
   { id:10,  title: "Villa",               img: architecture2, category: "Elevation" },
   { id:11,  title: "Modern Villa",        img: architecture4, category: "Elevation" },
@@ -102,7 +132,7 @@ const allProjects = [
   { id:21,  title: "Vill Garden",              img: landscape2,    category: "Landscape" },
   { id:22,  title: "Luxury ",        img: lobby5,        category: "Interior" },
   { id:23,  title: "Luxury Lobby",        img: lobby6,        category: "Lobby" },
-  { id:24,  title: "Luxury Interior",        img: lobby7,        category: "Interior" },
+  { id:24,  title: "Luxury Kitchen",        img: lobby7,        category: "Kitchen" },
   { id: 25,  title: "Cozy Bedroom",        img: bedroom5,      category: "Bedrooms" },
   { id: 26,  title: " Bedroom",        img:bedroom6 ,      category: "Bedrooms" },
   { id: 27,  title: "Luxury Bedroom",        img: bedroom7,      category: "Bedrooms" },
@@ -153,6 +183,36 @@ const allProjects = [
   { id:74,  title: "Landscap",              img: lc1,    category: "Landscape" },
   { id:75,  title: "Luxury Pool",              img: lc2,    category: "Landscape" },
   { id:76,  title: "Premium pool",              img: lc3,    category: "Landscape" },
+  { id:77,  title: "Kitchen",             img: int25,     category: "Kitchen" },
+  { id:78,  title: "Luxury Interior",        img: int26,        category: "Interior" },
+  { id:79,  title: "Kitchen",             img: int27,     category: "Kitchen" },
+  { id:80,  title: "Open Kitchen",             img: int28,     category: "Kitchen" },
+  { id:81,  title: "Premium Kitchen",             img: int29,     category: "Kitchen" },
+  { id:82,  title: "Lobby",        img: int30, category: "Lobby" },
+  { id:83,  title: "Premium Kitchen",             img: k1,     category: "Kitchen" },
+  { id:84,  title: "Premium Kitchen",             img: k2,     category: "Kitchen" },
+  { id:85,  title: "Premium Kitchen",             img: k3,     category: "Kitchen" },
+  { id:86,  title: "Premium Kitchen",             img: k4,     category: "Kitchen" },
+  { id:87,  title: "Premium Kitchen",             img: k5,     category: "Kitchen" },
+  { id:88,  title: "Premium Kitchen",             img: k6,     category: "Kitchen" },
+  { id:89,  title: "Premium Kitchen",             img: k7,     category: "Kitchen" },
+  { id:90,  title: "Premium Kitchen",             img: k9,     category: "Kitchen" },
+  { id:91,  title: "Premium Kitchen",             img: k10,     category: "Kitchen" },
+  { id:92,  title: "Premium Kitchen",             img: k11,     category: "Kitchen" },
+  { id:93,  title: "Premium Kitchen",             img: k12,     category: "Kitchen" },
+  { id:94,  title: "Luxury Bedroom",     img: b1,     category: "Bedrooms" },
+  { id:95,  title: "Luxury Bedroom",     img: b2,     category: "Bedrooms" },
+  { id:96,  title: "Luxury Bedroom",     img: b3,     category: "Bedrooms" },
+  { id:97,  title: "Luxury Bedroom",     img: b4,     category: "Bedrooms" },
+  { id:98,  title: "Luxury Bedroom",     img: b5,     category: "Bedrooms" },
+  { id:99,  title: "Luxury Bedroom",     img: b6,     category: "Bedrooms" },
+  { id:100,  title: "Luxury Bedroom",     img: b7,     category: "Bedrooms" },
+  { id:101,  title: "Luxury Bedroom",     img: b8,     category: "Bedrooms" },
+  { id:102,  title: "Luxury Bedroom",     img: b9,     category: "Bedrooms" },
+  { id:103,  title: "Luxury Bedroom",     img: b10,     category: "Bedrooms" },
+  { id:104,  title: "Luxury Bedroom",     img: b11,    category: "Bedrooms" },
+
+
 ];
 
 
@@ -161,7 +221,7 @@ export default function Projects() {
   const [visibleCount, setVisibleCount] = useState(6);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const categories = ["All", "Lobby", "Bedrooms", "Elevation", "Interior", "Landscape"];
+  const categories = ["All", "Lobby", "Bedrooms", "Elevation", "Interior", "Landscape","Kitchen"];
 
   const filteredProjects =
     category === "All" ? allProjects : allProjects.filter((p) => p.category === category);
