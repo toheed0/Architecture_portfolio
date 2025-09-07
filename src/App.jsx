@@ -11,7 +11,14 @@ export default function App() {
   return (
     <>
       <div className="h-screen flex items-center justify-center bg-black text-white text-2xl">
-      Website server Down, 
+      🚧 Website Temporarily Unavailable 🚧
+
+Our servers are currently down for maintenance or updates.  
+We’ll be back online shortly — thank you for your patience!  
+
+For urgent assistance, please contact Developer:  
+
+
     </div>
       {/* <Hero/>
       <About/>
