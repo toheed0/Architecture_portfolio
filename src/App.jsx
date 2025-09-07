@@ -10,12 +10,15 @@ import Team from "./components/Team";
 export default function App() {
   return (
     <>
-      <Hero/>
+      <div className="h-screen flex items-center justify-center bg-black text-white text-2xl">
+      Website server Down, 
+    </div>
+      {/* <Hero/>
       <About/>
       <Projects/>
       <Services/>
       <Team/>
-      <Footer/>
+      <Footer/> */}
     </>
   );
 }
